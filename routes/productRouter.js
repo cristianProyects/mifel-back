@@ -24,8 +24,6 @@ const { getProductSchema } = require("../schemas/productSchema");
  *                 type: string
  *               category:
  *                 type: string
- *               price:
- *                 type: integer
  *     responses:
  *       200:
  *         description:
