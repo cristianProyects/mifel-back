@@ -13,7 +13,7 @@ app.use(express.json());
 mainRouter(app);
 app.use(errorBoom, errorSequelize, error);
 
-// Configura swagger
+
 setupSwagger(app);
 
 app.listen(config.port, () => {

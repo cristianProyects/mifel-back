@@ -1,6 +1,6 @@
 const { ValidationError } = require('sequelize')
 
-const errorBoom = (err, req, res, next) => { // Para manejar los estatus code dinamicos
+const errorBoom = (err, req, res, next) => {
     if (err.isBoom) {
         const { output } = err;
         res.status(output.statusCode).json(output.payload);
@@ -11,7 +11,6 @@ const errorBoom = (err, req, res, next) => { // Para manejar los estatus code di
 
 const errorSequelize = (err, req, res, next) => {
     if (err instanceof ValidationError) {
-      // Limpiar los errores y dejar solo el mensaje
       const messages = err.errors.map(error => ({
         message: error.message,
         field: error.path
@@ -19,7 +18,7 @@ const errorSequelize = (err, req, res, next) => {
   
       res.status(409).json({
         statusCode: 409,
-        message: err.name, // SequelizeUniqueConstraintError o ValidationError
+        message: err.name, 
         errors: messages
       });
     } else {

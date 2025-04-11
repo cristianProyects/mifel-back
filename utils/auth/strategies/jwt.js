@@ -13,11 +13,11 @@ const jwtStrategy =
             try {
                 const _user = await models.Users.findByPk(payload.sub);
                 if (!_user ) {
-                    return done(boom.unauthorized(), false); //en caso de que el user no exista acceso denegado
+                    return done(boom.unauthorized(), false); 
                 }
-                done(null, _user); //permite el acceso y da permiso a las rutas designadas
+                done(null, _user);
             } catch (error) {
-                done(error, false); // en caso de no encontrar el encabezado arroja un error y deniega el acceso
+                done(error, false); 
             }
         }
     )
