@@ -7,9 +7,9 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Documentacion API FUT',
+      title: 'Documentacion MIFEL API',
       version: '1.0.0',
-      description: 'Documentación para el consumo de servicios API FUT',
+      description: 'Documentación para el consumo de servicios API MIFEL',
     },
     servers: [
       {
@@ -17,7 +17,7 @@ const options = {
       },
     ],
   },
-  apis: ['./routes/*.js'], // 👈 Archivos con anotaciones Swagger
+  apis: ['./routes/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

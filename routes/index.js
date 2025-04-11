@@ -1,5 +1,5 @@
 const express = require("express");
-const userService = require("./usersRouter");
+const productRoute = require("./productRouter");
 const passport = require("passport");
 const authRoute = require("./authRouter");
 
@@ -10,7 +10,7 @@ const mainRouter = (app) => {
 
   router.use(passport.authenticate("jwt", { session: false }));
 
-  router.use("/users", userService);
+  router.use("/products", productRoute);
 };
 
 module.exports = mainRouter;

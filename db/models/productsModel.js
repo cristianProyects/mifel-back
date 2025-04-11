@@ -3,8 +3,7 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 const PRODUCT_TABLE = 'products';
 
 const ProductSchema = {
-  id: {
-    allowNull: false,    
+  id: {    
     primaryKey: true,
     type: DataTypes.UUID, 
     defaultValue: DataTypes.UUIDV4, 
@@ -18,7 +17,7 @@ const ProductSchema = {
   },
   price: {
     allowNull: false,
-    type: DataTypes.STRING,
+    type: DataTypes.FLOAT,
   },
   category: {
     allowNull: false,

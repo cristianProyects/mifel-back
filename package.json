@@ -7,7 +7,9 @@
     "start": "nodemon index.js",
     "migrations:generate": "sequelize-cli migration:generate --name ",
     "migrations:run": "sequelize-cli db:migrate",
-    "migrations:revert": "sequelize-cli db:migrate:undo"
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "seeders:run": "sequelize-cli db:seed:all",
+    "seeders:revert": "sequelize-cli db:seed:undo:all"
   },
   "keywords": [],
   "author": "",
